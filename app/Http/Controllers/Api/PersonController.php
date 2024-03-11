@@ -10,8 +10,24 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $people = Person::all();
-        // ->with('aliases');
-        return response()->json($people);
+        $people = Person::with('status')
+            ->with('image')
+            ->with('aliases')
+            ->get();
+
+        return compact('people');
+        // return response()->json($people);
+        // return $people;
+    }
+
+    public function show($person_id)
+    {
+        $person = Person::with([
+            'image',
+            'status',
+            'aliases'
+        ])->findOrFail($person_id);
+
+        return compact('person');
     }
 }

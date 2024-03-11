@@ -1,4 +1,8 @@
-import Navigation from "../Navigation";
+import Main from "./Main";
+import Navigation from "./Navigation";
+
+
+
 
 
 function App() {
@@ -6,9 +10,10 @@ function App() {
     return (
         <>
             <Navigation />
+            <Main />
 
-            
         </>
+
     );
 }
 

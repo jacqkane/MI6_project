@@ -1,8 +1,11 @@
+
+
 import '/resources/scss/Navigation.scss'
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
 export default function Navigation() {
+
     const [isMenuVisible, setIsMenuVisible] = useState(true);
 
     const toggleMenuVisibility = () => {
