@@ -1,4 +1,5 @@
 import Navigation from "../Navigation";
+import People from "../People";
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     return (
         <>
             <Navigation />
-
+            <People />
             
         </>
     );
