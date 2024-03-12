@@ -29,17 +29,13 @@ export default function People()  {
                         people.map((person) => {
                         
                             return (
-                              <li>{person.name}</li>
+                              <li key={person.id}>{person.name}</li>
                             ) 
                           }
                           )
                     )
-
-
                 }   
                 </ul>
             </div>
-
         )
-
     }

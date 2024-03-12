@@ -1,0 +1,31 @@
+.status-filter {
+    font-family: 'Cutive Mono';
+    text-align: center;
+  
+    p {
+      font-size: 1.7em;
+      font-weight: 900;
+    }
+  
+    .status-filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      flex-wrap: wrap;
+  
+      .status-filter__status {
+        padding: 0.5em;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #ffffff22;
+        }
+  
+        &.selected {
+          background-color: #007bff;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  

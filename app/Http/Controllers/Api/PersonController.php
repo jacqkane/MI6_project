@@ -8,16 +8,15 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $people = Person::with('status')
             ->with('image')
             ->with('aliases')
+            ->where('status_id', '=', $request->get('status'))
             ->get();
 
         return compact('people');
-        // return response()->json($people);
-        // return $people;
     }
 
     public function show($person_id)

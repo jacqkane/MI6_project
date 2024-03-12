@@ -13,5 +13,5 @@ export default function ReactAppName() {
 }
 
 const container = document.getElementById('people-of-interest-app');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+const root = createRoot(container);
 root.render(<ReactAppName />);
