@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $people = Person::with('status')
             ->with('image')
             ->with('aliases')
-            ->where('status_id', '=', $request->get('status'))
+            ->limit(20)
             ->get();
 
         return compact('people');

@@ -1,38 +1,34 @@
+import "/resources/scss/PersonDetails.scss";
+
 const PersonDetail = ({ setPersonId, person, setPerson }) => {
-    return (
-        <div className="person-detail">
-            <button
-                onClick={() => {
-                    setPersonId(null);
-                    setPerson(null);
-                }}
-            >
-                Back to the list
-            </button>
-            <div className="person-detail__content">
-                <h2>{person.name}</h2>
-                <img src={"/images/" + person.image.path} alt="person image" />
-                <div>
-                    Status: {person.status_text} <br />
-                    Aliases: <br />
+
+    return <div className="person-detail">
+        <button onClick={() => {
+            setPersonId(null);
+            setPerson(null);
+        }
+        }>Back to the list</button>
+        <div className="person-detail__content">
+            <h2>{person.name}</h2>
+            <img src={'/images/' + person.image.path} alt="person image" />
+            <div className="person-details">
+                    <p>Status: {person.status_text}</p>
+                    <p>Aliases:</p>
                     {person.aliases.length > 0 ? (
-                        <ul>
-                            {person.aliases.map((alias) => {
-                                return <li key={alias.id}>{alias.alias}</li>;
-                            })}
+                        <ul className="alias-list">
+                            {person.aliases.map(alias => (
+                                <li key={alias.id}>{alias.alias}</li>
+                            ))}
                         </ul>
                     ) : (
-                        <>
-                            {" "}
-                            No aliases known <br />
-                        </>
+                        <p>No aliases known</p>
                     )}
-                    Occupation: {person.occupation} <br />
-                    Nationality: {person.nationality} <br />
+                    <p>Occupation: {person.occupation}</p>
+                    <p>Nationality: {person.nationality}</p>
                 </div>
-            </div>
         </div>
-    );
-};
+    </div>
+
+}
 
 export default PersonDetail;

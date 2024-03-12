@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "/resources/scss/StatusFilter.scss";
 
-export default function StatusFilter({ selectedStatus, setSelectedStatus }) {
+export default function StatusFilter({ selectedStatus, setSelectedStatus}) {
     const [statuses, setStatuses] = useState([]);
 
     const loadStatuses = async () => {
@@ -19,6 +19,11 @@ export default function StatusFilter({ selectedStatus, setSelectedStatus }) {
         loadStatuses();
     }, []);
 
+    const handleStatusClick = (status) => {
+        console.log("Clicked status:", status);
+        setSelectedStatus(status);
+    };
+
     return (
         <div className="status-filter">
             <p>Search by status</p>
@@ -29,9 +34,7 @@ export default function StatusFilter({ selectedStatus, setSelectedStatus }) {
                         className={`status-filter__status ${
                             selectedStatus === status.name ? "selected" : ""
                         }`}
-                        onClick={() => {
-                            setSelectedStatus(status.id);
-                        }}
+                        onClick={() => handleStatusClick(status.name)}
                     >
                         {status.name}
                     </div>
