@@ -13,6 +13,7 @@ class PersonController extends Controller
         $people = Person::with('status')
             ->with('image')
             ->with('aliases')
+            ->limit(10)
             ->get();
 
         return compact('people');

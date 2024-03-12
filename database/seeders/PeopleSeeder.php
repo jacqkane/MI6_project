@@ -9,6 +9,7 @@ use DB;
 use App\Models\Image;
 use App\Models\Person;
 use App\Models\Status;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class PeopleSeeder extends Seeder
 {

@@ -1,6 +1,6 @@
 import '/resources/scss/PeopleList.scss';
 
-export default function PeopleList({ people, setPersonId }) {
+export default function PeopleList({ people, setPersonId, selectedStatus }) {
 
 
     return (
