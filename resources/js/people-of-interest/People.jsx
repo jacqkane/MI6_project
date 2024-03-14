@@ -11,6 +11,7 @@ export default function People() {
     const [people, setPeople] = useState([]);
     const [selectedStatus, setSelectedStatus] = useState('');
 
+    console.log(people)
 
     const loadData = async () => {
         setLoading(true);
@@ -33,7 +34,7 @@ export default function People() {
 
     useEffect(() => {
         loadData();
-    }, [personId]);
+    }, [personId, selectedStatus]);
 
 
     return (

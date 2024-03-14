@@ -1,4 +1,4 @@
-export default function MissionsList({ missions }) {
+export default function MissionsList({ missions, missionId, setMissionId }) {
 
 
     return (
@@ -7,7 +7,7 @@ export default function MissionsList({ missions }) {
                 missions.map((elem) => {
                     return (
                         <>
-                            <div className="mission" key={elem.id}>
+                            <div className="mission" key={elem.id} onClick={() => { setMissionId(elem.id) }}>
                                 <div>{'ID: ' + elem.id}</div>
                                 <div>{'Name: ' + elem.name}</div>
                                 <div>{'Outcome: ' + elem.outcome}</div>

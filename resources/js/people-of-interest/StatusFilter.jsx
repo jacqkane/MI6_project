@@ -5,7 +5,7 @@ export default function StatusFilter(props) {
 
     const [statuses, setStatuses] = useState([]);
 
-    console.log(statuses);
+    // console.log(statuses);
 
 
     const loadStatuses = async () => {
@@ -34,7 +34,7 @@ export default function StatusFilter(props) {
                             <br />
                             <button key={elem.id}
                                 className={'status-filter__status'}
-                                onClick={props.setSelectedStatus(elem.id)}
+                                onClick={() => { props.setSelectedStatus(elem.id); }}
                             >{elem.name}</button>
                         </>
                     )

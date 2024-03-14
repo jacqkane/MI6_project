@@ -20,4 +20,20 @@ class MissionController extends Controller
     {
         return Mission::with('people')->findOrFail($id)->toJson();
     }
+
+    public function update(Request $request, $mission_id)
+    {
+    
+        $mission = Mission::findOrFail($mission_id);
+
+        $mission->name = $request->input('name') ?? $mission->name;
+        $mission->outcome = $request->input('outcome') ?? $mission->outcome;
+        $mission->year = $request->input('year') ?? $mission->year;
+        $mission->save();
+
+
+        return [
+            'status' => 'success'
+        ];
+    }
 }

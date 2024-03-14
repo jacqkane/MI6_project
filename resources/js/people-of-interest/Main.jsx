@@ -4,6 +4,8 @@ import People from './People'
 
 import '/resources/scss/Main.scss'
 import Missions from "./Missions";
+import Login from "./Login";
+import Register from "./Register";
 
 export default function Main({ content, setContent }) {
 
@@ -11,6 +13,7 @@ export default function Main({ content, setContent }) {
     switch (content) {
         case 'main':
             selectedContent = <h1>Welcome to MI6</h1>
+
             break;
 
         case 'people-of-interest':
@@ -19,6 +22,12 @@ export default function Main({ content, setContent }) {
 
         case 'missions':
             selectedContent = <Missions />
+            break;
+        case 'login':
+            selectedContent = <Login />
+            break;
+        case 'register':
+            selectedContent = <Register />
             break;
 
     }

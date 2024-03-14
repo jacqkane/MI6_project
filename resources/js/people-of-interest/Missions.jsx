@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import MissionsList from "./MissionsList";
+import MissionEditForm from "./MissionEditForm";
 
 export default function Missions() {
 
     const [missions, setMissions] = useState([]);
     const [missionId, setMissionId] = useState(null);
+
+    // console.log(missionId)
 
 
     const loadMissions = async () => {
@@ -29,9 +32,9 @@ export default function Missions() {
         <>
             {
 
-                missionId ?
-                    <MissionsList missions={missions} />
-                    : <h3>nothing</h3>
+                missionId
+                    ? <MissionEditForm missionId={missionId} setMissionId={setMissionId} />
+                    : <MissionsList missions={missions} missionId={missionId} setMissionId={setMissionId} />
 
             }
         </>
