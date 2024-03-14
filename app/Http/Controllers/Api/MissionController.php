@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Mission;
+use App\Models\Person;
 use Illuminate\Http\Request;
 
 class MissionController extends Controller
@@ -13,7 +14,6 @@ class MissionController extends Controller
     {
         $missions = Mission::all();
         return compact('missions');
-        // return json_encode(Mission::all()->toJson());
     }
 
     public function show(int $id): string
@@ -36,4 +36,19 @@ class MissionController extends Controller
             'status' => 'success'
         ];
     }
+
+    public function assignPerson(Request $request) {
+        $request->validate([
+            'personId' => 'required|exists:people,id',
+            'missionId' => 'required|exists:missions,id',
+        ]);
+
+        $mission = Mission::findOrFail($request->missionId);
+        $person = Person::findOrFail($request->personId);
+
+        $mission->people()->attach($person->id);
+
+        return response()->json(['message' => 'Person assigned to mission successfully'], 200);
+    }
+    
 }

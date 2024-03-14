@@ -18,9 +18,6 @@ export default function StatusFilter(props) {
         loadStatuses();
 
     }, [])
-
-
-
     return (
         <div className="status-filter">
             Filter by status
