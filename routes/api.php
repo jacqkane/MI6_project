@@ -28,3 +28,5 @@ Route::get('/statuses', [StatusController::class, 'index']);
 Route::get('/missions', [MissionController::class, 'index']);
 Route::get('/missions/{mission_id}', [MissionController::class, 'show']);
 Route::post('/missions/update/{mission_id}', [MissionController::class, 'update']);
+Route::post('/missions/assign-person', [MissionController::class, 'assignPerson']);
+Route::post('/missions/unassign-person', [MissionController::class, 'unassignPerson']);

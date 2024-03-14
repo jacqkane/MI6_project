@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserContext from './UserContext';
 
+
 export default function Register(props) {
 
     const navigate = useNavigate();

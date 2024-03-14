@@ -12,13 +12,15 @@ class PersonController extends Controller
     {
 
         $status = $request->status;
-      
+
+
+
         $people = Person::with('status')
             ->with('image')
             ->with('aliases')
             ->get();
 
-        if ($status !== '') {
+        if ($status != '') {
             $people = Person::with('status')
                 ->with('image')
                 ->with('aliases')

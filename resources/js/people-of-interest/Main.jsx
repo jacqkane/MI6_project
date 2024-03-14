@@ -31,7 +31,7 @@ export default function Main({ content, setContent }) {
             break;
 
     }
-    console.log(selectedContent)
+    // console.log(selectedContent)
 
     return (
         <div className="main">

@@ -30,13 +30,13 @@ export default function StatusFilter(props) {
 
                 statuses.map((elem) => {
                     return (
-                        <>
-                            <br />
-                            <button key={elem.id}
+                        <div key={elem.id}>
+
+                            <button
                                 className={'status-filter__status'}
                                 onClick={() => { props.setSelectedStatus(elem.id); }}
                             >{elem.name}</button>
-                        </>
+                        </div>
                     )
 
                 })
