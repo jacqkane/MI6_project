@@ -22,7 +22,6 @@ export default function People() {
 
             setPerson(data.person);
         } else {
-            // let url = `/api/people`;
             let url = `/api/people` + '?status=' + encodeURIComponent(selectedStatus);
             const response = await fetch(url);
             const data = await response.json();
