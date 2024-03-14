@@ -35,6 +35,23 @@ body {
     font-family: 'Cutive Mono';
     position: relative;
     margin-right: 3rem;
+    button {
+        margin-right: 1rem;
+        padding: 10px;
+        background-color: #3E7A78;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    button:hover {
+        background-color: #2B5554;
+        color: white;
+    }
 
     &__content {
         padding-top: 2rem;

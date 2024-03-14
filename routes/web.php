@@ -17,6 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main', function () {
-    return view('main');
-});
+Route::view('/{path?}', 'main')->where('path', '.*');

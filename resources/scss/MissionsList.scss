@@ -1,0 +1,30 @@
+.missions-list {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    padding: 10px; 
+}
+
+.mission {
+    flex: 1 0 calc(33.33% - 10px); 
+    background-color: #2B5554; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+
+    &:hover {
+        background-color: #3E7A78;
+        border-color: #fff;
+    }
+
+    .mission-info {
+        width: 100%;
+    }
+
+    div {
+        margin-bottom: 5px;
+    }
+}

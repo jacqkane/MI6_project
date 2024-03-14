@@ -1,31 +1,26 @@
 .status-filter {
-    font-family: 'Cutive Mono';
-    text-align: center;
-  
-    p {
-      font-size: 1.7em;
-      font-weight: 900;
-    }
-  
-    .status-filter-container {
+  background-color: #163838; 
+  padding: 10px; 
+
+  .status-buttons {
       display: flex;
-      justify-content: center;
-      gap: 1em;
       flex-wrap: wrap;
-  
-      .status-filter__status {
-        padding: 0.5em;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #ffffff22;
-        }
-  
-        &.selected {
-          background-color: #007bff;
-          color: #ffffff;
-        }
-      }
-    }
+      margin-top: 5px;
   }
-  
+
+  .status-filter__status {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      background-color: #2B5554; 
+      color: white; 
+      border: none; 
+      padding: 5px 10px; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: background-color 0.3s; 
+
+      &:hover {
+          background-color: #3E7A78; 
+      }
+  }
+}

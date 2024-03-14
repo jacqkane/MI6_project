@@ -1,45 +1,38 @@
-import React, { useEffect, useState } from "react";
-import "/resources/scss/StatusFilter.scss";
+import { useEffect, useState } from "react"
+import '/resources/scss/StatusFilter.scss'
 
-export default function StatusFilter({ selectedStatus, setSelectedStatus}) {
+
+export default function StatusFilter(props) {
+
     const [statuses, setStatuses] = useState([]);
 
     const loadStatuses = async () => {
-        try {
-            const response = await fetch("http://www.mi6.test/api/statuses");
-            const data = await response.json();
-            console.log("loaded statuses", data);
-            setStatuses(data);
-        } catch (error) {
-            console.error("Not successful loading statuses", error);
-        }
-    };
+        const response = await fetch('http://www.mi6.test/api/statuses');
+        const data = await response.json();
+        setStatuses(data.statuses);
+
+
+    }
 
     useEffect(() => {
         loadStatuses();
-    }, []);
 
-    const handleStatusClick = (status) => {
-        console.log("Clicked status:", status);
-        setSelectedStatus(status);
-    };
+    }, [])
+
+
 
     return (
         <div className="status-filter">
-            <p>Search by status</p>
-            <div className="status-filter-container">
-                {statuses.map((status) => (
-                    <div
-                        key={status.id}
-                        className={`status-filter__status ${
-                            selectedStatus === status.name ? "selected" : ""
-                        }`}
-                        onClick={() => handleStatusClick(status.name)}
-                    >
-                        {status.name}
-                    </div>
+            Filter by status
+            <div className="status-buttons">
+                {statuses.map((elem) => (
+                    <button key={elem.id}
+                        className={'status-filter__status'}
+                        onClick={() => { props.setSelectedStatus(elem.id); }}
+                    >{elem.name}</button>
                 ))}
             </div>
         </div>
-    );
+    )
+
 }
